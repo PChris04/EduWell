@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wellness</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+<body class="page-bg">
+
+    <div class="wellness-container">
+        <div class="top-bar">
+            <a href="{% url 'dashboard' %}" class="back-arrow">←</a>
+            <h2>Wellness</h2>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <h3>How are you feeling today?</h3>
+
+            <div class="mood-option">
+                {% for radio in form.mood %}
+                    <label>
+                        {{ radio.tag }}
+                        {{ radio.choice_label }}
+                    </label>
+                {% endfor %}
+            </div>
+
+            <div>
+                {{ form.journal_entry }}
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="mental-health-resources">
+            <h4><strong>Mental</strong> Health Resources</h4>
+            <div class="resource-links">
+                <a href="#" class="resource-button">Resource Link</a>
+                <a href="#" class="resource-button">Resource Link</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

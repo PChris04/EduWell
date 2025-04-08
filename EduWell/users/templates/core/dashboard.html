@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{% static 'core/style.css' %}">
+</head>
+<body class="page-bg">
+
+  <div class="dashboard-container">
+    <nav class="nav-tabs">
+      <a href="{% url 'dashboard' %}" class="active-tab">Dashboard</a>
+      <a href="{% url 'calendar' %}">Calendar</a>
+      <a href="{% url 'wellness' %}">Wellness</a>
+    </nav>
+
+    <h2>Good Morning, Thando!</h2>
+    <p class="mood-label">Daily Mood Check-in</p>
+
+    <div class="mood-icons">
+      <span>😊</span><span>😐</span><span>😟</span><span>😢</span><span>😁</span>
+    </div>
+
+    <div class="task-section">
+      <h3>Upcoming Tasks</h3>
+      <ul class="task-list">
+        <li><span class="dot"></span> <strong>CS Project</strong> <br><small>Due Tomorrow</small></li>
+        <li><span class="dot"></span> <strong>Read Textbook</strong> <br><small>Due Thursday</small></li>
+        <li><span class="dot"></span> <strong>Read Novel</strong> <br><small>Due Saturday</small></li>
+      </ul>
+    </div>
+
+    <button class="add-task-btn">Add New Task</button>
+  </div>
+
+</body>
+</html>
